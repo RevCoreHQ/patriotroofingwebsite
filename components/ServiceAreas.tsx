@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { MapPin } from "lucide-react";
-import { SERVICE_AREAS } from "@/lib/constants";
+import { SERVICE_AREAS_DATA } from "@/lib/constants";
 
 export default function ServiceAreas() {
   return (
@@ -24,11 +25,11 @@ export default function ServiceAreas() {
 
                 {/* Scattered location dots */}
                 <div className="mt-10 flex flex-wrap justify-center gap-2">
-                  {SERVICE_AREAS.slice(0, 6).map((area) => (
-                    <span key={area} className="inline-flex items-center gap-1.5 bg-white/[0.07] border border-white/10 px-3 py-1.5 rounded-full text-white/70 text-xs font-medium">
+                  {SERVICE_AREAS_DATA.slice(0, 6).map((area) => (
+                    <Link key={area.slug} href={`/areas/${area.slug}`} className="inline-flex items-center gap-1.5 bg-white/[0.07] border border-white/10 px-3 py-1.5 rounded-full text-white/70 hover:text-white hover:bg-white/[0.12] transition-colors text-xs font-medium">
                       <span className="w-1.5 h-1.5 bg-patriot-red rounded-full" />
-                      {area}
-                    </span>
+                      {area.name}
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -49,11 +50,11 @@ export default function ServiceAreas() {
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {SERVICE_AREAS.map((area) => (
-                <div key={area} className="flex items-center gap-2.5 py-2.5 px-3 rounded-lg hover:bg-warm-gray transition-colors">
+              {SERVICE_AREAS_DATA.map((area) => (
+                <Link key={area.slug} href={`/areas/${area.slug}`} className="flex items-center gap-2.5 py-2.5 px-3 rounded-lg hover:bg-warm-gray transition-colors group">
                   <div className="w-2 h-2 bg-patriot-red rounded-full shrink-0" />
-                  <span className="text-dark text-sm font-medium">{area}, NC</span>
-                </div>
+                  <span className="text-dark text-sm font-medium group-hover:text-patriot-red transition-colors">{area.name}, NC</span>
+                </Link>
               ))}
             </div>
 
