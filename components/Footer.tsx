@@ -17,7 +17,7 @@ export default function Footer() {
                 </svg>
               </div>
               <div>
-                <span className="font-bold text-lg leading-tight block">Patriot Roofing</span>
+                <span className="font-display font-extrabold text-lg leading-tight block tracking-tight">Patriot Roofing</span>
                 <span className="text-sm text-gray-400 leading-tight block">& Home Repair</span>
               </div>
             </div>

@@ -36,8 +36,8 @@ export default function Header() {
               </svg>
             </div>
             <div className="hidden sm:block">
-              <span className="font-bold text-navy text-lg leading-tight block">Patriot Roofing</span>
-              <span className="text-xs text-muted leading-tight block">& Home Repair</span>
+              <span className="font-display font-extrabold text-navy text-lg leading-tight block tracking-tight">Patriot Roofing</span>
+              <span className="text-xs text-muted leading-tight block tracking-wide uppercase">& Home Repair</span>
             </div>
           </Link>
 

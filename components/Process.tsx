@@ -23,42 +23,59 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="py-24 bg-navy relative overflow-hidden">
+    <section className="relative py-28 overflow-hidden">
+      {/* Diagonal dark bg */}
+      <div className="absolute inset-0 bg-navy-dark diagonal-both" />
       <div className="absolute inset-0 hero-pattern" />
+      <div className="absolute inset-0 stripe-pattern opacity-20" />
+
+      {/* Large decorative "03" */}
+      <div className="absolute right-10 bottom-10 font-display text-[250px] leading-none font-extrabold text-white/[0.02] select-none pointer-events-none hidden lg:block">
+        03
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-6">
-        {/* Section header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-patriot-red-light font-semibold text-sm uppercase tracking-wider">Our Process</span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mt-3 mb-4">
-            Three Simple Steps to a Better Roof
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-20">
+          <span className="section-label !text-white/90 !bg-white/[0.07] !border-white/10">
+            Our Process
+          </span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-5 mb-4 tracking-tight">
+            Three Simple Steps<br />to a Better Roof
           </h2>
-          <p className="text-white/60 text-lg">
-            We make roofing simple. From first call to final inspection, here&apos;s how we take care of your home.
+          <p className="text-white/50 text-lg">
+            From first call to final inspection, here&apos;s how we take care of your home.
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {steps.map((s, i) => (
-            <div key={s.step} className="relative">
-              {/* Connector line */}
-              {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-16 left-[60%] w-[80%] h-[2px] bg-gradient-to-r from-patriot-red/50 to-transparent" />
-              )}
+        {/* Steps — horizontal with connector */}
+        <div className="relative">
+          {/* Horizontal connector line */}
+          <div className="hidden md:block absolute top-[52px] left-[16%] right-[16%] h-[2px]">
+            <div className="w-full h-full bg-gradient-to-r from-patriot-red via-white/20 to-patriot-red" />
+          </div>
 
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 bg-patriot-red rounded-xl flex items-center justify-center">
-                    <s.icon className="w-7 h-7 text-white" />
+          <div className="grid md:grid-cols-3 gap-10">
+            {steps.map((s, i) => (
+              <div key={s.step} className="relative text-center group">
+                {/* Step number circle — sits on the connector line */}
+                <div className="relative z-10 mx-auto mb-8">
+                  <div className="w-[104px] h-[104px] mx-auto rounded-full bg-navy-dark ring-2 ring-white/10 flex items-center justify-center group-hover:ring-patriot-red/50 transition-all duration-300">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-patriot-red to-patriot-red-dark flex items-center justify-center shadow-xl shadow-patriot-red/20">
+                      <s.icon className="w-8 h-8 text-white" />
+                    </div>
                   </div>
-                  <span className="text-5xl font-bold text-white/10">{s.step}</span>
+                  {/* Step number badge */}
+                  <div className="absolute -top-1 -right-1 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md">
+                    <span className="font-display font-extrabold text-navy text-xs">{s.step}</span>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{s.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{s.desc}</p>
+
+                <h3 className="font-display text-xl font-bold text-white mb-3">{s.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed max-w-xs mx-auto">{s.desc}</p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

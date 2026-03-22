@@ -3,40 +3,61 @@ import { SERVICE_AREAS } from "@/lib/constants";
 
 export default function ServiceAreas() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-28 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left - Map placeholder */}
-          <div className="bg-warm-gray rounded-3xl p-8 lg:p-12">
-            <div className="bg-navy/5 rounded-2xl aspect-square flex items-center justify-center">
-              <div className="text-center p-8">
-                <MapPin className="w-16 h-16 text-patriot-red mx-auto mb-4" />
-                <p className="text-navy font-bold text-xl mb-2">NC Triad Region</p>
-                <p className="text-muted text-sm">Proudly serving the Piedmont Triad area and surrounding communities</p>
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          {/* Left — Map visual */}
+          <div className="relative">
+            <div className="bg-navy rounded-3xl p-10 relative overflow-hidden">
+              <div className="absolute inset-0 hero-pattern opacity-50" />
+              <div className="absolute inset-0 stripe-pattern opacity-10" />
+
+              <div className="relative text-center py-12">
+                {/* Shield-shaped pin */}
+                <div className="w-20 h-24 bg-patriot-red shield-shape flex items-center justify-center mx-auto mb-8">
+                  <MapPin className="w-10 h-10 text-white" />
+                </div>
+                <p className="font-display font-extrabold text-white text-3xl mb-3 tracking-tight">NC Triad Region</p>
+                <p className="text-white/50 text-sm max-w-xs mx-auto">
+                  Proudly serving the Piedmont Triad area and surrounding communities
+                </p>
+
+                {/* Scattered location dots */}
+                <div className="mt-10 flex flex-wrap justify-center gap-2">
+                  {SERVICE_AREAS.slice(0, 6).map((area) => (
+                    <span key={area} className="inline-flex items-center gap-1.5 bg-white/[0.07] border border-white/10 px-3 py-1.5 rounded-full text-white/70 text-xs font-medium">
+                      <span className="w-1.5 h-1.5 bg-patriot-red rounded-full" />
+                      {area}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
+
+            {/* Offset shadow */}
+            <div className="absolute -bottom-3 -right-3 w-full h-full bg-patriot-red/[0.06] rounded-3xl -z-10" />
           </div>
 
-          {/* Right - Content */}
+          {/* Right — Content */}
           <div>
-            <span className="text-patriot-red font-semibold text-sm uppercase tracking-wider">Service Areas</span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark mt-3 mb-4">
-              Proudly Serving North Carolina
+            <span className="section-label">Service Areas</span>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark mt-4 mb-4 tracking-tight">
+              Proudly Serving<br />North Carolina
             </h2>
-            <p className="text-muted text-lg mb-8 leading-relaxed">
-              Based in Lexington, NC, we provide roofing and home repair services throughout the Piedmont Triad region. No matter where you are in our service area, you&apos;ll get the same premium quality and attention to detail.
+            <p className="text-muted text-lg mb-10 leading-relaxed">
+              Based in Lexington, NC, we provide roofing and home repair services throughout the Piedmont Triad. Same premium quality everywhere we work.
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {SERVICE_AREAS.map((area) => (
-                <div key={area} className="flex items-center gap-2 py-2">
-                  <MapPin className="w-4 h-4 text-patriot-red shrink-0" />
+                <div key={area} className="flex items-center gap-2.5 py-2.5 px-3 rounded-lg hover:bg-warm-gray transition-colors">
+                  <div className="w-2 h-2 bg-patriot-red rounded-full shrink-0" />
                   <span className="text-dark text-sm font-medium">{area}, NC</span>
                 </div>
               ))}
             </div>
 
-            <p className="text-muted text-sm mt-6">
+            <p className="text-muted text-sm mt-8">
               Don&apos;t see your city? Give us a call — we may still serve your area.
             </p>
           </div>
