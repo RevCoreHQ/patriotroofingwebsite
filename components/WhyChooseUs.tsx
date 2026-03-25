@@ -80,7 +80,7 @@ export default function WhyChooseUs() {
             {/* Main photo block */}
             <div className="rounded-3xl overflow-hidden relative">
               <Image
-                src={IMAGES.roofWork}
+                src={IMAGES.gallery7}
                 alt="Patriot Roofing crew installing new shingles on a residential roof"
                 width={800}
                 height={600}

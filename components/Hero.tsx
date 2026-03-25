@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Phone, Shield, Star, Award } from "lucide-react";
 import { COMPANY, IMAGES } from "@/lib/constants";
@@ -27,16 +26,17 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen flex items-center bg-navy-dark overflow-hidden">
-      {/* Background image with parallax */}
+      {/* Background video with parallax */}
       <div ref={bgRef} className="absolute inset-0 will-change-transform" style={{ top: "-10%", bottom: "-10%" }}>
-        <Image
-          src={IMAGES.hero}
-          alt="Professional roofing work in North Carolina"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={IMAGES.heroVideo} type="video/mp4" />
+        </video>
       </div>
 
       {/* Layered overlays */}

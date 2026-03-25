@@ -77,7 +77,7 @@ export default function AboutPage() {
             {/* Visual */}
             <div className="rounded-3xl overflow-hidden relative">
               <Image
-                src={IMAGES.project}
+                src={IMAGES.gallery8}
                 alt="Completed roofing project by Patriot Roofing & Home Repair"
                 width={800}
                 height={600}

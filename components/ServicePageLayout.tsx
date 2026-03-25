@@ -95,7 +95,7 @@ export default function ServicePageLayout({
             {/* Service photo */}
             <div className="rounded-3xl overflow-hidden relative sticky top-28">
               <Image
-                src={IMAGES.roofWork}
+                src={IMAGES.gallery3}
                 alt={`Professional ${title.toLowerCase()} by Patriot Roofing`}
                 width={800}
                 height={600}

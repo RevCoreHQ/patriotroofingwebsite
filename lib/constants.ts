@@ -3,6 +3,15 @@ export const IMAGES = {
   hero: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c16b76d25fe2a0321b0c9b.webp",
   roofWork: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d3c505117b612e43b75b.jpg",
   project: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d3c5bd26d68e6d4399c3.jpg",
+  heroVideo: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d51ebd26d6d9c343a44a.mp4",
+  gallery1: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d601264fce36eb1efee1.jpg",
+  gallery2: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d6012769486ed87312a5.jpg",
+  gallery3: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d601fb3c43d610fcf44c.jpg",
+  gallery4: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d601fb3c43ce03fcf44b.jpg",
+  gallery5: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d601a5f6097f4339d45c.jpg",
+  gallery6: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d6012869b2e4b28a91c4.jpg",
+  gallery7: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d601bd26d605d643ae68.jpg",
+  gallery8: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d6017985207da9be2d11.jpg",
 };
 
 export const COMPANY = {
