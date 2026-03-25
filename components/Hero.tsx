@@ -1,20 +1,44 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, Shield, Star, Award } from "lucide-react";
 import { COMPANY, IMAGES } from "@/lib/constants";
 
 export default function Hero() {
+  const bgRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onScroll() {
+      const y = window.scrollY;
+      if (bgRef.current) {
+        bgRef.current.style.transform = `translateY(${y * 0.35}px)`;
+      }
+      if (contentRef.current) {
+        contentRef.current.style.transform = `translateY(${y * 0.15}px)`;
+        contentRef.current.style.opacity = `${Math.max(0, 1 - y / 700)}`;
+      }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <section className="relative min-h-[92vh] flex items-center bg-navy-dark overflow-hidden">
-      {/* Background image */}
-      <Image
-        src={IMAGES.hero}
-        alt="Professional roofing work in North Carolina"
-        fill
-        className="object-cover"
-        priority
-        sizes="100vw"
-      />
+    <section className="relative h-screen flex items-center bg-navy-dark overflow-hidden">
+      {/* Background image with parallax */}
+      <div ref={bgRef} className="absolute inset-0 will-change-transform" style={{ top: "-10%", bottom: "-10%" }}>
+        <Image
+          src={IMAGES.hero}
+          alt="Professional roofing work in North Carolina"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+      </div>
+
       {/* Layered overlays */}
       <div className="absolute inset-0 hero-gradient" />
       <div className="absolute inset-0 stripe-pattern opacity-40" />
@@ -50,7 +74,8 @@ export default function Hero() {
         <p className="text-white/60 text-xs font-medium">Rated 5.0 by NC Homeowners</p>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 py-28 w-full">
+      {/* Content with scroll fade */}
+      <div ref={contentRef} className="relative max-w-7xl mx-auto px-6 pt-20 w-full will-change-transform">
         <div className="max-w-3xl">
           {/* Section label */}
           <div className="animate-fade-up">
@@ -59,13 +84,12 @@ export default function Hero() {
             </span>
           </div>
 
-          {/* Headline — display font, tighter tracking */}
+          {/* Headline */}
           <h1 className="animate-fade-up-delay-1 font-display text-[2.75rem] sm:text-6xl lg:text-7xl xl:text-[5.25rem] font-extrabold text-white leading-[1.05] mt-8 mb-6 tracking-tight">
             Protect Your Home
             <br />
             <span className="relative inline-block">
               with NC&apos;s
-              {/* Hand-drawn underline accent */}
               <svg className="absolute -bottom-2 left-0 w-full h-3 text-patriot-red" viewBox="0 0 200 12" preserveAspectRatio="none">
                 <path d="M0 8 Q50 0 100 7 T200 4" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
               </svg>
@@ -79,7 +103,7 @@ export default function Hero() {
             Storm damage repairs to complete roof replacements — our licensed team delivers quality craftsmanship and clear communication on every project.
           </p>
 
-          {/* Trust indicators as pills */}
+          {/* Trust indicators */}
           <div className="animate-fade-up-delay-2 flex flex-wrap gap-3 mb-10">
             {[
               { icon: Shield, text: "Licensed & Insured" },
@@ -115,7 +139,15 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Angled bottom divider (not a boring wave) */}
+      {/* Scroll indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-up-delay-3">
+        <span className="text-white/40 text-xs font-medium uppercase tracking-widest">Scroll</span>
+        <div className="w-5 h-8 border-2 border-white/20 rounded-full flex justify-center pt-1.5">
+          <div className="w-1 h-2 bg-white/50 rounded-full animate-bounce" />
+        </div>
+      </div>
+
+      {/* Angled bottom divider */}
       <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-[0]">
         <svg viewBox="0 0 1440 100" fill="none" className="w-full" preserveAspectRatio="none">
           <path d="M0 100h1440V55L0 100z" fill="white" />
