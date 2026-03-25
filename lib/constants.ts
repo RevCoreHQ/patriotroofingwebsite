@@ -17,13 +17,14 @@ export const IMAGES = {
 export const COMPANY = {
   name: "Patriot Roofing & Home Repair",
   shortName: "Patriot Roofing",
-  phone: "(336) 555-0176",
-  phoneRaw: "+13365550176",
-  email: "info@patriotroofingandhomerepair.com",
-  address: "Lexington, NC",
-  tagline: "Your Trusted Roofing Partner in North Carolina",
+  phone: "(336) 479-6059",
+  phoneRaw: "+13364796059",
+  email: "timothy@patriotroofingandhomerepair.com",
+  address: "316 W Davidson Ave, Lexington, NC 27295",
+  tagline: "Protecting Homes with Quality Roofing & Repairs",
   license: "NC Licensed & Insured",
   url: "https://patriotroofingandhomerepair.com",
+  instagram: "https://www.instagram.com/patriotroofinghomerepair",
 };
 
 export const SERVICE_AREAS = [
@@ -168,19 +169,19 @@ export const SERVICES = [
     icon: "wrench" as const,
   },
   {
-    title: "Emergency Roofing",
-    slug: "emergency-roofing",
-    shortDesc: "24/7 emergency response when storm damage can't wait.",
-    icon: "alert-triangle" as const,
+    title: "Kitchen Renovation",
+    slug: "kitchen-renovation",
+    shortDesc: "Beautiful kitchen remodels that transform the heart of your home.",
+    icon: "utensils" as const,
   },
   {
-    title: "Gutters",
-    slug: "gutters",
-    shortDesc: "Seamless gutter installation and repair to protect your foundation.",
-    icon: "droplets" as const,
+    title: "Bathroom Renovation",
+    slug: "bathroom-renovation",
+    shortDesc: "Modern bathroom upgrades with quality fixtures and expert craftsmanship.",
+    icon: "bath" as const,
   },
   {
-    title: "Home Repairs & Remodeling",
+    title: "Home Repair",
     slug: "home-repairs",
     shortDesc: "Quality home improvements from trusted local craftsmen.",
     icon: "hammer" as const,
@@ -193,27 +194,32 @@ export const NAV_LINKS = [
   { label: "Areas We Serve", href: "/areas/lexington-nc" },
   { label: "Gallery", href: "/#gallery" },
   { label: "About", href: "/about" },
-  { label: "Reviews", href: "/#reviews" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const TESTIMONIALS = [
   {
-    name: "Sarah M.",
-    location: "Lexington, NC",
+    name: "Mark Okken",
+    location: "NC",
     rating: 5,
-    text: "Patriot Roofing replaced our entire roof in just two days. The crew was professional, cleaned up everything, and the new roof looks incredible. Best experience we've had with any contractor.",
+    text: "Friendly and respectful interaction from start to finish. The work completed was impressive — you can tell they take real pride in what they do. Highly recommend Patriot Roofing.",
   },
   {
-    name: "James T.",
-    location: "Greensboro, NC",
+    name: "Kelly Wishon",
+    location: "NC",
     rating: 5,
-    text: "After a bad storm damaged our roof, Patriot was there the next morning. They handled the insurance paperwork and made the whole process stress-free. Highly recommend to anyone in the Triad area.",
+    text: "Impressive work with expertise that's hard to find these days. The team is friendly, skilled, and professional. They delivered exactly what they promised and then some.",
   },
   {
-    name: "Linda & Robert K.",
-    location: "Winston-Salem, NC",
+    name: "Walt & Shirley Kahl",
+    location: "NC",
     rating: 5,
-    text: "We got three quotes for our roof replacement, and Patriot offered the best value by far. The communication was outstanding from start to finish. Our neighbors have already asked for their number.",
+    text: "Exceeded our expectations in every way. Great communication and attention to detail throughout the entire project. We couldn't be happier with the results.",
+  },
+  {
+    name: "Shannon Jones",
+    location: "NC",
+    rating: 5,
+    text: "Quality roof at a great price, completed in a timely and efficient manner. The crew was professional, the cleanup was thorough, and the whole experience was top-notch.",
   },
 ];

@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, Shield, Star, Award } from "lucide-react";
 import { COMPANY, IMAGES } from "@/lib/constants";
@@ -9,23 +10,27 @@ export default function Hero() {
   const bgRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
-    // Force video play on mount
     const video = videoRef.current;
-    if (video) {
-      video.load();
-      video.play().catch(() => {
-        // Autoplay may be blocked, try again on user interaction
-        const tryPlay = () => {
-          video.play().catch(() => {});
-          document.removeEventListener("click", tryPlay);
-          document.removeEventListener("scroll", tryPlay);
-        };
-        document.addEventListener("click", tryPlay, { once: true });
-        document.addEventListener("scroll", tryPlay, { once: true });
-      });
-    }
+    if (!video) return;
+
+    const onPlaying = () => setVideoReady(true);
+    video.addEventListener("playing", onPlaying);
+
+    video.load();
+    video.play().catch(() => {
+      const tryPlay = () => {
+        video.play().catch(() => {});
+        document.removeEventListener("click", tryPlay);
+        document.removeEventListener("scroll", tryPlay);
+      };
+      document.addEventListener("click", tryPlay, { once: true });
+      document.addEventListener("scroll", tryPlay, { once: true });
+    });
+
+    return () => video.removeEventListener("playing", onPlaying);
   }, []);
 
   useEffect(() => {
@@ -45,8 +50,18 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen flex items-center bg-navy-dark overflow-hidden">
-      {/* Background video with parallax */}
+      {/* Background with parallax */}
       <div ref={bgRef} className="absolute inset-0 will-change-transform" style={{ top: "-10%", bottom: "-10%" }}>
+        {/* Static poster — always visible, loads instantly */}
+        <Image
+          src="/media/hero-poster.webp"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        {/* Video fades in on top once playing — no flash */}
         <video
           ref={videoRef}
           autoPlay
@@ -54,11 +69,11 @@ export default function Hero() {
           loop
           playsInline
           preload="auto"
-          poster="/media/hero-poster.webp"
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src={IMAGES.heroVideo} type="video/mp4" />
-        </video>
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+            videoReady ? "opacity-100" : "opacity-0"
+          }`}
+          src={IMAGES.heroVideo}
+        />
       </div>
 
       {/* Layered overlays */}

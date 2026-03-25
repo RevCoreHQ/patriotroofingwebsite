@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Home, RefreshCw, Wrench, AlertTriangle, Droplets, Hammer, ArrowRight } from "lucide-react";
+import { Home, RefreshCw, Wrench, Utensils, Bath, Hammer, ArrowRight } from "lucide-react";
 import { SERVICES, IMAGES } from "@/lib/constants";
 
 const iconMap = {
   home: Home,
   "refresh-cw": RefreshCw,
   wrench: Wrench,
-  "alert-triangle": AlertTriangle,
-  droplets: Droplets,
+  utensils: Utensils,
+  bath: Bath,
   hammer: Hammer,
 } as const;
 

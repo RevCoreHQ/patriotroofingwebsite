@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Home, RefreshCw, Wrench, AlertTriangle, Droplets, Hammer, ArrowRight, Phone } from "lucide-react";
+import { Home, RefreshCw, Wrench, Utensils, Bath, Hammer, ArrowRight, Phone } from "lucide-react";
 import { COMPANY, SERVICES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Roofing & Home Repair Services",
   description:
-    "Professional roofing services in Lexington, Greensboro & Winston-Salem, NC. Roof installation, replacement, repair, emergency roofing, gutters & home remodeling. Free estimates.",
+    "Professional roofing and home renovation services in Lexington, Greensboro & Winston-Salem, NC. Roof installation, replacement, repair, kitchen & bathroom renovation, and home repairs. Free estimates.",
 };
 
 const iconMap = {
   home: Home,
   "refresh-cw": RefreshCw,
   wrench: Wrench,
-  "alert-triangle": AlertTriangle,
-  droplets: Droplets,
+  utensils: Utensils,
+  bath: Bath,
   hammer: Hammer,
 } as const;
 

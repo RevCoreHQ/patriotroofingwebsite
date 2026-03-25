@@ -119,63 +119,63 @@ const SERVICE_CITY_CONTENT: Record<
       },
     ],
   },
-  "emergency-roofing": {
-    headline: "Emergency Roofing in {city}, NC",
+  "kitchen-renovation": {
+    headline: "Kitchen Renovation in {city}, NC",
     description:
-      "When storm damage, a fallen tree, or a sudden leak threatens your {city} home, you need a roofing team you can count on — fast. Patriot Roofing provides rapid emergency response across {county} to secure your property and prevent further damage. We're available when it matters most.",
-    metaTitle: "Emergency Roof Repair in {city}, NC | 24/7 Storm Damage",
+      "Ready to transform your {city} kitchen? Patriot Roofing & Home Repair delivers beautiful, functional kitchen remodels across {county}. From custom cabinets and countertops to complete gut renovations, our experienced team handles every detail so you get the kitchen your family deserves.",
+    metaTitle: "Kitchen Renovation in {city}, NC | Kitchen Remodel Contractor",
     metaDescription:
-      "24/7 emergency roof repair in {city}, {county}, NC. Storm damage, fallen trees, severe leaks. Rapid response, tarping & board-up. Licensed & insured.",
+      "Professional kitchen renovation in {city}, {county}, NC. Custom cabinets, countertops, flooring & complete remodels. Licensed & insured. Free estimates.",
     benefits: [
-      "Rapid response to {city} emergencies — we dispatch crews as quickly as possible",
-      "Immediate tarping and board-up to protect your {county} home from further damage",
-      "Available for severe weather events — storms in {city} don't wait for business hours",
-      "Full insurance claim documentation — we photograph and report all damage for your adjuster",
-      "Permanent repair solutions after the emergency, not just temporary patches",
-      "Coordination with tree removal services when fallen trees damage {city} roofs",
+      "Custom cabinet design and installation tailored to your {city} home's layout and your family's needs",
+      "Premium countertop options — granite, quartz, butcher block — expertly measured and installed",
+      "Complete kitchen remodels from demolition to final walkthrough, managed by one trusted {county} contractor",
+      "Expert flooring installation including tile, hardwood, and LVP to match your new kitchen design",
+      "Electrical and plumbing upgrades to support modern appliances and fixtures",
+      "We handle all {city} building permits and {county} inspections for your renovation",
     ],
     faqs: [
       {
-        q: "What should I do if a storm damages my roof in {city}?",
-        a: "First, ensure everyone is safe. Then call us immediately. Don't go on the roof yourself. We'll dispatch a crew to tarp or secure the damaged area, preventing further water intrusion while we plan a permanent repair.",
+        q: "How much does a kitchen renovation cost in {city}?",
+        a: "Kitchen renovation costs in {city} vary widely depending on scope — a cosmetic update may start around $10,000 while a full gut remodel can range from $25,000-$60,000+. We provide free, detailed estimates so you know exactly what to expect.",
       },
       {
-        q: "Do you offer 24/7 emergency roofing in {county}?",
-        a: "Yes, we provide emergency roofing services to {city} and all of {county}. During major storm events, we prioritize calls based on severity and deploy multiple crews across the area.",
+        q: "How long does a kitchen remodel take in {county}?",
+        a: "Most kitchen renovations in {county} take 4-8 weeks depending on the scope. A simple cabinet and countertop refresh may be faster, while a full gut renovation with layout changes takes longer. We provide a clear timeline upfront.",
       },
       {
-        q: "Will insurance cover emergency roof repair in {city}?",
-        a: "In most cases, yes. Homeowner's insurance typically covers storm damage, including the cost of emergency tarping and permanent repairs. We help {city} homeowners document the damage and work directly with insurance adjusters.",
+        q: "Do I need a permit for a kitchen renovation in {city}?",
+        a: "If your kitchen remodel involves plumbing, electrical, or structural changes, yes — {city} requires building permits. We handle the entire permit process for you, including scheduling {county} inspections.",
       },
     ],
   },
-  gutters: {
-    headline: "Gutter Installation & Repair in {city}, NC",
+  "bathroom-renovation": {
+    headline: "Bathroom Renovation in {city}, NC",
     description:
-      "Your {city} home's gutters are its first defense against water damage. We install custom-fabricated seamless gutter systems designed to handle {county}'s heaviest rainfall, channeling water safely away from your foundation, landscaping, and siding. Protect your investment with gutters that actually work.",
-    metaTitle: "Gutter Installation in {city}, NC | Seamless Gutters",
+      "Upgrade your {city} bathroom with modern fixtures, expert tile work, and quality craftsmanship. Whether it's a simple refresh or a complete renovation, Patriot Roofing & Home Repair creates bathrooms that combine style, comfort, and lasting durability for {county} homeowners.",
+    metaTitle: "Bathroom Renovation in {city}, NC | Bathroom Remodel Contractor",
     metaDescription:
-      "Seamless gutter installation & repair in {city}, {county}, NC. Custom-fabricated on-site, gutter guards available. Protect your foundation. Free estimates.",
+      "Professional bathroom renovation in {city}, {county}, NC. Custom showers, vanities, tile work & complete remodels. Licensed & insured. Free estimates.",
     benefits: [
-      "Custom seamless gutters fabricated on-site to perfectly fit your {city} home — no leak-prone seams",
-      "Engineered slope and downspout placement for {county}'s rainfall patterns",
-      "Multiple colors and materials to complement {city} home styles",
-      "Gutter guard options to minimize maintenance — especially important with {county}'s tree cover",
-      "Prevents costly foundation damage, basement flooding, and exterior staining",
-      "Professional removal and disposal of your old gutter system",
+      "Custom shower and tub installations — walk-in showers, frameless glass, and soaking tubs designed for your {city} home",
+      "Expert tile work for floors, walls, and shower surrounds — precision installation that lasts",
+      "Vanity and cabinet installation from single sinks to double vanities for {city} homes of all sizes",
+      "Complete plumbing upgrades — new fixtures, supply lines, and drain work for your new bathroom",
+      "Professional waterproofing to prevent mold and water damage in {county}'s humid climate",
+      "Accessibility upgrades including grab bars, walk-in showers, and comfort-height fixtures",
     ],
     faqs: [
       {
-        q: "How much do new gutters cost in {city}?",
-        a: "Seamless aluminum gutter installation in {city} typically runs $6-$12 per linear foot, depending on your home's height, accessibility, and whether you add gutter guards. Most {city} homes fall in the $1,200-$3,000 range. We provide a free exact quote.",
+        q: "How much does a bathroom renovation cost in {city}?",
+        a: "Bathroom renovation costs in {city} typically range from $8,000 for a basic refresh to $30,000+ for a full gut renovation with premium fixtures. We provide free, detailed estimates with no hidden fees.",
       },
       {
-        q: "Do I need gutter guards on my {city} home?",
-        a: "If your property has trees nearby — which is common in {county} — gutter guards can save significant time and money on maintenance. They prevent leaves, pine needles, and debris from clogging your system. We'll recommend the best option during your free estimate.",
+        q: "How long does a bathroom remodel take in {county}?",
+        a: "Most bathroom renovations in {county} take 2-4 weeks. Simple updates like a vanity swap and new tile can be faster, while a full renovation with layout changes may take longer. We'll give you a clear timeline before work begins.",
       },
       {
-        q: "How long do seamless gutters last in North Carolina?",
-        a: "Properly installed aluminum seamless gutters typically last 20-30 years in {county}'s climate. We install with heavy-duty hidden hangers and ensure proper slope for optimal drainage and longevity.",
+        q: "Can you make my bathroom more accessible in {city}?",
+        a: "Absolutely. We specialize in accessibility upgrades for {city} homeowners — walk-in showers with bench seating, grab bars, comfort-height toilets, and wider doorways. These improvements add safety and value to your home.",
       },
     ],
   },
