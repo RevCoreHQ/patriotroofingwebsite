@@ -51,6 +51,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
+      <head>
+        <link rel="preload" href="/media/hero-poster.webp" as="image" />
+        <link
+          rel="preload"
+          href="https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d51ebd26d6d9c343a44a.mp4"
+          as="video"
+          type="video/mp4"
+        />
+        <link
+          rel="preload"
+          href="https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c169286f10170a0c2ebe00.webp"
+          as="image"
+        />
+      </head>
       <body className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>

@@ -8,6 +8,25 @@ import { COMPANY, IMAGES } from "@/lib/constants";
 export default function Hero() {
   const bgRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Force video play on mount
+    const video = videoRef.current;
+    if (video) {
+      video.load();
+      video.play().catch(() => {
+        // Autoplay may be blocked, try again on user interaction
+        const tryPlay = () => {
+          video.play().catch(() => {});
+          document.removeEventListener("click", tryPlay);
+          document.removeEventListener("scroll", tryPlay);
+        };
+        document.addEventListener("click", tryPlay, { once: true });
+        document.addEventListener("scroll", tryPlay, { once: true });
+      });
+    }
+  }, []);
 
   useEffect(() => {
     function onScroll() {
@@ -29,15 +48,17 @@ export default function Hero() {
       {/* Background video with parallax */}
       <div ref={bgRef} className="absolute inset-0 will-change-transform" style={{ top: "-10%", bottom: "-10%" }}>
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
-          poster={IMAGES.hero}
+          poster="/media/hero-poster.webp"
           className="absolute inset-0 w-full h-full object-cover"
-          src={IMAGES.heroVideo}
-        />
+        >
+          <source src={IMAGES.heroVideo} type="video/mp4" />
+        </video>
       </div>
 
       {/* Layered overlays */}
