@@ -190,7 +190,10 @@ export const SERVICES = [
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
+  { label: "Areas We Serve", href: "/areas/lexington-nc" },
+  { label: "Gallery", href: "/#gallery" },
   { label: "About", href: "/about" },
+  { label: "Reviews", href: "/#reviews" },
   { label: "Contact", href: "/contact" },
 ];
 

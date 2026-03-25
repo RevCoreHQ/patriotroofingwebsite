@@ -56,18 +56,18 @@ export default function Process() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
-            {steps.map((s, i) => (
+            {steps.map((s) => (
               <div key={s.step} className="relative text-center group">
                 {/* Step number circle — sits on the connector line */}
-                <div className="relative z-10 mx-auto mb-8">
-                  <div className="w-[104px] h-[104px] mx-auto rounded-full bg-navy-dark ring-2 ring-white/10 flex items-center justify-center group-hover:ring-patriot-red/50 transition-all duration-300">
+                <div className="relative z-10 w-[104px] h-[104px] mx-auto mb-8">
+                  <div className="w-full h-full rounded-full bg-navy-dark ring-2 ring-white/10 flex items-center justify-center group-hover:ring-patriot-red/50 transition-all duration-300">
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-patriot-red to-patriot-red-dark flex items-center justify-center shadow-xl shadow-patriot-red/20">
                       <s.icon className="w-8 h-8 text-white" />
                     </div>
                   </div>
-                  {/* Step number badge */}
-                  <div className="absolute -top-1 -right-1 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md">
-                    <span className="font-display font-extrabold text-navy text-xs">{s.step}</span>
+                  {/* Step number badge — top-right, properly centered */}
+                  <div className="absolute -top-1 -right-1 w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-lg">
+                    <span className="font-display font-extrabold text-navy text-sm leading-none">{s.step}</span>
                   </div>
                 </div>
 

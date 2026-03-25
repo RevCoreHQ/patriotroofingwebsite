@@ -33,10 +33,11 @@ export default function Hero() {
           muted
           loop
           playsInline
+          preload="auto"
+          poster={IMAGES.hero}
           className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src={IMAGES.heroVideo} type="video/mp4" />
-        </video>
+          src={IMAGES.heroVideo}
+        />
       </div>
 
       {/* Layered overlays */}

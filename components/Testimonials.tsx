@@ -3,7 +3,7 @@ import { TESTIMONIALS } from "@/lib/constants";
 
 export default function Testimonials() {
   return (
-    <section className="py-28 bg-cream relative overflow-hidden">
+    <section id="reviews" className="py-28 bg-cream relative overflow-hidden">
       {/* Decorative star */}
       <div className="absolute right-10 top-10 text-[200px] leading-none text-patriot-red/[0.03] select-none pointer-events-none hidden lg:block">
         ★

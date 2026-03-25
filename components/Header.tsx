@@ -27,23 +27,23 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
-        {/* Logo */}
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-24">
+        {/* Logo — always show original colors */}
         <Link href="/" className="shrink-0">
           <Image
             src={IMAGES.logo}
             alt="Patriot Roofing & Home Repair"
-            width={180}
-            height={60}
-            className={`h-12 w-auto transition-all duration-300 ${
-              scrolled ? "" : "brightness-0 invert"
+            width={260}
+            height={80}
+            className={`h-16 w-auto transition-all duration-300 ${
+              scrolled ? "" : "drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
             }`}
             priority
           />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden xl:flex items-center gap-10">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -60,10 +60,10 @@ export default function Header() {
         </nav>
 
         {/* CTA + Phone */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-5">
           <a
             href={`tel:${COMPANY.phoneRaw}`}
-            className={`hidden md:flex items-center gap-2 text-sm font-semibold transition-colors ${
+            className={`hidden lg:flex items-center gap-2 text-sm font-semibold transition-colors ${
               scrolled
                 ? "text-navy hover:text-patriot-red"
                 : "text-white/90 hover:text-white"
@@ -82,7 +82,7 @@ export default function Header() {
           {/* Mobile menu toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`lg:hidden p-2 transition-colors ${
+            className={`xl:hidden p-2 transition-colors ${
               scrolled ? "text-navy hover:text-patriot-red" : "text-white hover:text-white/70"
             }`}
             aria-label="Toggle menu"
@@ -94,7 +94,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-gray-100 bg-white shadow-lg">
+        <div className="xl:hidden border-t border-gray-100 bg-white shadow-lg">
           <nav className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
               <Link
