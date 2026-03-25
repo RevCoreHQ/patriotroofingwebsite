@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { Award, Users, MessageSquare, DollarSign } from "lucide-react";
+import { IMAGES } from "@/lib/constants";
 
 const reasons = [
   {
@@ -73,33 +75,25 @@ export default function WhyChooseUs() {
             </div>
           </div>
 
-          {/* Right — stats + visual block */}
+          {/* Right — photo + stats */}
           <div className="relative">
-            {/* Main visual block */}
-            <div className="bg-navy rounded-3xl p-10 relative overflow-hidden">
-              <div className="absolute inset-0 hero-pattern opacity-50" />
-              <div className="absolute top-0 right-0 w-32 h-32 bg-patriot-red/20 rounded-full blur-3xl" />
-
-              <div className="relative">
-                <div className="w-16 h-20 bg-patriot-red shield-shape flex items-center justify-center mx-auto mb-8">
-                  <svg viewBox="0 0 24 24" className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                    <polyline points="9 22 9 12 15 12 15 22" />
-                  </svg>
-                </div>
-                <p className="text-white font-display font-extrabold text-3xl text-center mb-3">
-                  Your Home Deserves<br />the Best
-                </p>
-                <p className="text-white/50 text-center text-sm mb-10">
-                  Premium roofing by local experts who care
-                </p>
-
-                {/* Stats grid inside the dark block */}
-                <div className="grid grid-cols-2 gap-4">
+            {/* Main photo block */}
+            <div className="rounded-3xl overflow-hidden relative">
+              <Image
+                src={IMAGES.roofWork}
+                alt="Patriot Roofing crew installing new shingles on a residential roof"
+                width={800}
+                height={600}
+                className="w-full h-auto object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              {/* Overlay with stats */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-dark/90 via-navy-dark/50 to-transparent p-8 pt-20">
+                <div className="grid grid-cols-4 gap-3">
                   {stats.map((stat) => (
-                    <div key={stat.label} className="bg-white/[0.06] border border-white/10 rounded-xl p-5 text-center">
-                      <p className="stat-number text-3xl !bg-gradient-to-r !from-white !to-white/80 mb-1">{stat.value}</p>
-                      <p className="text-white/50 text-xs font-medium">{stat.label}</p>
+                    <div key={stat.label} className="text-center">
+                      <p className="font-display font-extrabold text-2xl text-white mb-0.5">{stat.value}</p>
+                      <p className="text-white/60 text-[10px] font-medium uppercase tracking-wider">{stat.label}</p>
                     </div>
                   ))}
                 </div>

@@ -1,12 +1,21 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, Shield, Star, Award } from "lucide-react";
-import { COMPANY } from "@/lib/constants";
+import { COMPANY, IMAGES } from "@/lib/constants";
 
 export default function Hero() {
   return (
     <section className="relative min-h-[92vh] flex items-center bg-navy-dark overflow-hidden">
-      {/* Layered background */}
-      <div className="absolute inset-0 hero-pattern" />
+      {/* Background image */}
+      <Image
+        src={IMAGES.hero}
+        alt="Professional roofing work in North Carolina"
+        fill
+        className="object-cover"
+        priority
+        sizes="100vw"
+      />
+      {/* Layered overlays */}
       <div className="absolute inset-0 hero-gradient" />
       <div className="absolute inset-0 stripe-pattern opacity-40" />
 

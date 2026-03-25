@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Shield, Award, Users, Heart, Phone, ArrowRight, CheckCircle2, Star } from "lucide-react";
-import { COMPANY } from "@/lib/constants";
+import { COMPANY, IMAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -74,17 +75,15 @@ export default function AboutPage() {
             </div>
 
             {/* Visual */}
-            <div className="bg-warm-gray rounded-3xl p-8 lg:p-12">
-              <div className="bg-navy rounded-2xl aspect-[4/3] flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 hero-pattern opacity-50" />
-                <div className="relative text-center p-8">
-                  <div className="w-20 h-20 bg-patriot-red rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <Users className="w-10 h-10 text-white" />
-                  </div>
-                  <p className="text-white font-bold text-2xl mb-2">Meet Our Team</p>
-                  <p className="text-white/60 text-sm">Experienced, local, dedicated</p>
-                </div>
-              </div>
+            <div className="rounded-3xl overflow-hidden relative">
+              <Image
+                src={IMAGES.project}
+                alt="Completed roofing project by Patriot Roofing & Home Repair"
+                width={800}
+                height={600}
+                className="w-full h-auto object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>

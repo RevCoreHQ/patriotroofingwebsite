@@ -1,10 +1,13 @@
+import Image from "next/image";
+import { IMAGES } from "@/lib/constants";
+
 const projects = [
-  { title: "Complete Roof Replacement", location: "Lexington, NC", type: "Architectural Shingles", span: "md:col-span-2 md:row-span-2" },
-  { title: "Storm Damage Repair", location: "Greensboro, NC", type: "Emergency Service", span: "" },
-  { title: "New Construction Roofing", location: "Winston-Salem, NC", type: "Metal Roofing", span: "" },
-  { title: "Gutter Installation", location: "High Point, NC", type: "Seamless Gutters", span: "" },
-  { title: "Roof Inspection & Repair", location: "Thomasville, NC", type: "Leak Repair", span: "md:col-span-2" },
-  { title: "Full Home Remodel", location: "Kernersville, NC", type: "Roof + Siding", span: "" },
+  { title: "Complete Roof Replacement", location: "Lexington, NC", type: "Architectural Shingles", span: "md:col-span-2 md:row-span-2", image: IMAGES.project },
+  { title: "Storm Damage Repair", location: "Greensboro, NC", type: "Emergency Service", span: "", image: IMAGES.roofWork },
+  { title: "New Construction Roofing", location: "Winston-Salem, NC", type: "Metal Roofing", span: "", image: IMAGES.hero },
+  { title: "Gutter Installation", location: "High Point, NC", type: "Seamless Gutters", span: "", image: null },
+  { title: "Roof Inspection & Repair", location: "Thomasville, NC", type: "Leak Repair", span: "md:col-span-2", image: null },
+  { title: "Full Home Remodel", location: "Kernersville, NC", type: "Roof + Siding", span: "", image: null },
 ];
 
 export default function Gallery() {
@@ -31,31 +34,35 @@ export default function Gallery() {
               key={project.title}
               className={`group relative overflow-hidden rounded-2xl cursor-pointer ${project.span}`}
             >
-              {/* Gradient background with varied colors */}
-              <div className={`absolute inset-0 ${
-                i === 0
-                  ? "bg-gradient-to-br from-navy via-navy-light to-navy-dark"
-                  : i % 3 === 1
-                  ? "bg-gradient-to-br from-warm-gray to-warm-gray-dark"
-                  : i % 3 === 2
-                  ? "bg-gradient-to-br from-navy/[0.08] to-navy/[0.03]"
-                  : "bg-gradient-to-br from-patriot-red/[0.06] to-warm-gray"
-              }`} />
-
-              {/* Subtle texture */}
-              <div className="absolute inset-0 hero-pattern opacity-30" />
-
-              {/* Placeholder icon */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${
-                  i === 0 ? "bg-white/10" : "bg-navy/[0.06]"
-                }`}>
-                  <svg viewBox="0 0 24 24" className={`w-8 h-8 ${i === 0 ? "text-white/30" : "text-navy/20"}`} fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                    <polyline points="9 22 9 12 15 12 15 22" />
-                  </svg>
-                </div>
-              </div>
+              {/* Image or gradient fallback */}
+              {project.image ? (
+                <Image
+                  src={project.image}
+                  alt={`${project.title} - ${project.location}`}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes={i === 0 ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
+                />
+              ) : (
+                <>
+                  <div className={`absolute inset-0 ${
+                    i % 3 === 1
+                      ? "bg-gradient-to-br from-warm-gray to-warm-gray-dark"
+                      : i % 3 === 2
+                      ? "bg-gradient-to-br from-navy/[0.08] to-navy/[0.03]"
+                      : "bg-gradient-to-br from-patriot-red/[0.06] to-warm-gray"
+                  }`} />
+                  <div className="absolute inset-0 hero-pattern opacity-30" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center bg-navy/[0.06]">
+                      <svg viewBox="0 0 24 24" className="w-8 h-8 text-navy/20" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                        <polyline points="9 22 9 12 15 12 15 22" />
+                      </svg>
+                    </div>
+                  </div>
+                </>
+              )}
 
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />

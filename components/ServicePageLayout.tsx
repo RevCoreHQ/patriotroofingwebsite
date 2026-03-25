@@ -1,6 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, ArrowRight, CheckCircle2, Shield, Star, Clock } from "lucide-react";
-import { COMPANY } from "@/lib/constants";
+import { COMPANY, IMAGES } from "@/lib/constants";
 
 interface ServicePageLayoutProps {
   title: string;
@@ -91,20 +92,16 @@ export default function ServicePageLayout({
               </div>
             </div>
 
-            {/* Visual placeholder */}
-            <div className="bg-warm-gray rounded-3xl p-8">
-              <div className="bg-navy/5 rounded-2xl aspect-[4/3] flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-20 h-20 bg-patriot-red/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <svg viewBox="0 0 24 24" className="w-10 h-10 text-patriot-red" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                      <polyline points="9 22 9 12 15 12 15 22" />
-                    </svg>
-                  </div>
-                  <p className="text-navy font-bold text-lg">Project Photo</p>
-                  <p className="text-muted text-sm mt-1">Before & after images</p>
-                </div>
-              </div>
+            {/* Service photo */}
+            <div className="rounded-3xl overflow-hidden relative sticky top-28">
+              <Image
+                src={IMAGES.roofWork}
+                alt={`Professional ${title.toLowerCase()} by Patriot Roofing`}
+                width={800}
+                height={600}
+                className="w-full h-auto object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>

@@ -1,3 +1,9 @@
+export const IMAGES = {
+  hero: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c16b76d25fe2a0321b0c9b.webp",
+  roofWork: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d3c505117b612e43b75b.jpg",
+  project: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d3c5bd26d68e6d4399c3.jpg",
+};
+
 export const COMPANY = {
   name: "Patriot Roofing & Home Repair",
   shortName: "Patriot Roofing",
