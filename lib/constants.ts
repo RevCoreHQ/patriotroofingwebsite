@@ -1,4 +1,5 @@
 export const IMAGES = {
+  logo: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c169286f10170a0c2ebe00.webp",
   hero: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c16b76d25fe2a0321b0c9b.webp",
   roofWork: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d3c505117b612e43b75b.jpg",
   project: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d3c5bd26d68e6d4399c3.jpg",

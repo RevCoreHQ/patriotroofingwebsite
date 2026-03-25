@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, Menu, X } from "lucide-react";
-import { COMPANY, NAV_LINKS } from "@/lib/constants";
+import { COMPANY, NAV_LINKS, IMAGES } from "@/lib/constants";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -28,17 +29,15 @@ export default function Header() {
       <header className="sticky top-0 z-50 glass border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-18">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-navy rounded-lg flex items-center justify-center group-hover:bg-patriot-red transition-colors">
-              <svg viewBox="0 0 24 24" className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                <polyline points="9 22 9 12 15 12 15 22" />
-              </svg>
-            </div>
-            <div className="hidden sm:block">
-              <span className="font-display font-extrabold text-navy text-lg leading-tight block tracking-tight">Patriot Roofing</span>
-              <span className="text-xs text-muted leading-tight block tracking-wide uppercase">& Home Repair</span>
-            </div>
+          <Link href="/" className="shrink-0">
+            <Image
+              src={IMAGES.logo}
+              alt="Patriot Roofing & Home Repair"
+              width={180}
+              height={60}
+              className="h-12 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}

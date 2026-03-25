@@ -1,6 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { COMPANY, SERVICES, SERVICE_AREAS_DATA, NAV_LINKS } from "@/lib/constants";
+import { COMPANY, SERVICES, SERVICE_AREAS_DATA, NAV_LINKS, IMAGES } from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -9,17 +10,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company info */}
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-patriot-red rounded-lg flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                  <polyline points="9 22 9 12 15 12 15 22" />
-                </svg>
-              </div>
-              <div>
-                <span className="font-display font-extrabold text-lg leading-tight block tracking-tight">Patriot Roofing</span>
-                <span className="text-sm text-gray-400 leading-tight block">& Home Repair</span>
-              </div>
+            <div className="mb-6">
+              <Image
+                src={IMAGES.logo}
+                alt="Patriot Roofing & Home Repair"
+                width={180}
+                height={60}
+                className="h-12 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               North Carolina&apos;s trusted roofing contractor. Licensed, insured, and committed to protecting your home with quality craftsmanship.
