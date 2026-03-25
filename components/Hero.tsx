@@ -122,7 +122,7 @@ export default function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="animate-fade-up-delay-1 font-display text-[2.75rem] sm:text-6xl lg:text-7xl xl:text-[5.25rem] font-extrabold text-white leading-[1.05] mt-8 mb-6 tracking-tight">
+          <h1 className="animate-fade-up-delay-1 font-display text-4xl sm:text-6xl lg:text-7xl xl:text-[5.25rem] font-extrabold text-white leading-[1.05] mt-6 mb-5 sm:mt-8 sm:mb-6 tracking-tight">
             Protect Your Home
             <br />
             <span className="relative inline-block">

@@ -28,45 +28,45 @@ export default function ContactPage() {
       {/* Contact info bar */}
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 bg-patriot-red/10 rounded-xl flex items-center justify-center shrink-0">
-                <Phone className="w-7 h-7 text-patriot-red" />
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-14 sm:h-14 bg-patriot-red/10 rounded-xl flex items-center justify-center shrink-0">
+                <Phone className="w-5 h-5 sm:w-7 sm:h-7 text-patriot-red" />
               </div>
-              <div>
-                <p className="text-sm text-muted mb-1">Call Us</p>
-                <a href={`tel:${COMPANY.phoneRaw}`} className="font-bold text-dark hover:text-patriot-red transition-colors">
+              <div className="min-w-0">
+                <p className="text-xs sm:text-sm text-muted mb-0.5 sm:mb-1">Call Us</p>
+                <a href={`tel:${COMPANY.phoneRaw}`} className="font-bold text-dark hover:text-patriot-red transition-colors text-sm sm:text-base">
                   {COMPANY.phone}
                 </a>
               </div>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 bg-patriot-red/10 rounded-xl flex items-center justify-center shrink-0">
-                <Mail className="w-7 h-7 text-patriot-red" />
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-14 sm:h-14 bg-patriot-red/10 rounded-xl flex items-center justify-center shrink-0">
+                <Mail className="w-5 h-5 sm:w-7 sm:h-7 text-patriot-red" />
               </div>
-              <div>
-                <p className="text-sm text-muted mb-1">Email Us</p>
-                <a href={`mailto:${COMPANY.email}`} className="font-bold text-dark hover:text-patriot-red transition-colors text-sm">
+              <div className="min-w-0">
+                <p className="text-xs sm:text-sm text-muted mb-0.5 sm:mb-1">Email</p>
+                <a href={`mailto:${COMPANY.email}`} className="font-bold text-dark hover:text-patriot-red transition-colors text-xs sm:text-sm break-all">
                   {COMPANY.email}
                 </a>
               </div>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 bg-patriot-red/10 rounded-xl flex items-center justify-center shrink-0">
-                <MapPin className="w-7 h-7 text-patriot-red" />
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-14 sm:h-14 bg-patriot-red/10 rounded-xl flex items-center justify-center shrink-0">
+                <MapPin className="w-5 h-5 sm:w-7 sm:h-7 text-patriot-red" />
               </div>
-              <div>
-                <p className="text-sm text-muted mb-1">Location</p>
-                <p className="font-bold text-dark">{COMPANY.address}</p>
+              <div className="min-w-0">
+                <p className="text-xs sm:text-sm text-muted mb-0.5 sm:mb-1">Location</p>
+                <p className="font-bold text-dark text-sm sm:text-base">{COMPANY.address}</p>
               </div>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 bg-patriot-red/10 rounded-xl flex items-center justify-center shrink-0">
-                <Clock className="w-7 h-7 text-patriot-red" />
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-14 sm:h-14 bg-patriot-red/10 rounded-xl flex items-center justify-center shrink-0">
+                <Clock className="w-5 h-5 sm:w-7 sm:h-7 text-patriot-red" />
               </div>
-              <div>
-                <p className="text-sm text-muted mb-1">Hours</p>
-                <p className="font-bold text-dark">Mon–Sat: 7am–6pm</p>
+              <div className="min-w-0">
+                <p className="text-xs sm:text-sm text-muted mb-0.5 sm:mb-1">Hours</p>
+                <p className="font-bold text-dark text-sm sm:text-base">Mon–Sat: 7am–6pm</p>
               </div>
             </div>
           </div>

@@ -13,18 +13,18 @@ export default function TrustBar() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 divide-x divide-gray-100">
           {badges.map((badge) => (
-            <div key={badge.title} className="relative px-6 py-6 group">
+            <div key={badge.title} className="relative px-3 py-4 sm:px-6 sm:py-6 group">
               {/* Top accent bar */}
-              <div className={`absolute top-0 left-6 right-6 h-[3px] ${badge.accent} rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+              <div className={`absolute top-0 left-3 right-3 sm:left-6 sm:right-6 h-[3px] ${badge.accent} rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2.5 sm:gap-4">
                 {/* Shield-shaped icon container */}
-                <div className={`w-12 h-14 ${badge.accent} shield-shape flex items-center justify-center shrink-0`}>
-                  <badge.icon className="w-5 h-5 text-white" />
+                <div className={`w-9 h-11 sm:w-12 sm:h-14 ${badge.accent} shield-shape flex items-center justify-center shrink-0`}>
+                  <badge.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
-                <div>
-                  <h3 className="font-display font-bold text-dark text-sm">{badge.title}</h3>
-                  <p className="text-muted text-xs mt-0.5">{badge.desc}</p>
+                <div className="min-w-0">
+                  <h3 className="font-display font-bold text-dark text-xs sm:text-sm leading-tight">{badge.title}</h3>
+                  <p className="text-muted text-[10px] sm:text-xs mt-0.5 hidden sm:block">{badge.desc}</p>
                 </div>
               </div>
             </div>

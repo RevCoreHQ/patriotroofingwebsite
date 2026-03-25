@@ -4,7 +4,7 @@ import { COMPANY } from "@/lib/constants";
 
 export default function CTASection() {
   return (
-    <section className="relative py-28 overflow-hidden">
+    <section className="relative py-16 sm:py-28 overflow-hidden">
       {/* Diagonal red background */}
       <div className="absolute inset-0 bg-patriot-red" />
       <div className="absolute inset-0 bg-gradient-to-br from-patriot-red-dark/50 to-transparent" />

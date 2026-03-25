@@ -34,12 +34,12 @@ const stats = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-28 bg-white relative overflow-hidden">
+    <section className="py-16 sm:py-28 bg-white relative overflow-hidden">
       {/* Stripe texture */}
       <div className="absolute inset-0 stripe-pattern opacity-30" />
 
       <div className="relative max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-20 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left — content with timeline */}
           <div>
             <span className="section-label">Why Patriot Roofing</span>

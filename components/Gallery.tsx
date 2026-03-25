@@ -12,7 +12,7 @@ const projects = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-28 bg-white relative overflow-hidden">
+    <section id="gallery" className="py-16 sm:py-28 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header — left-aligned */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">

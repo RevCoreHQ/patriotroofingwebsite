@@ -3,7 +3,7 @@ import { TESTIMONIALS } from "@/lib/constants";
 
 export default function Testimonials() {
   return (
-    <section id="reviews" className="py-28 bg-cream relative overflow-hidden">
+    <section id="reviews" className="py-16 sm:py-28 bg-cream relative overflow-hidden">
       {/* Decorative star */}
       <div className="absolute right-10 top-10 text-[200px] leading-none text-patriot-red/[0.03] select-none pointer-events-none hidden lg:block">
         ★
@@ -26,7 +26,7 @@ export default function Testimonials() {
           {TESTIMONIALS.map((testimonial, i) => (
             <div
               key={testimonial.name}
-              className={`relative bg-white p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 ${
+              className={`relative bg-white p-5 sm:p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 ${
                 i === 1 ? "md:-translate-y-4 rounded-3xl" : "rounded-2xl"
               }`}
             >

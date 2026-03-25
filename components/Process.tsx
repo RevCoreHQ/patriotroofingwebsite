@@ -23,7 +23,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="relative py-28 overflow-hidden">
+    <section className="relative py-16 sm:py-28 overflow-hidden">
       {/* Diagonal dark bg */}
       <div className="absolute inset-0 bg-navy-dark diagonal-both" />
       <div className="absolute inset-0 hero-pattern" />
@@ -55,14 +55,14 @@ export default function Process() {
             <div className="w-full h-full bg-gradient-to-r from-patriot-red via-white/20 to-patriot-red" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-3 gap-8 sm:gap-10">
             {steps.map((s) => (
               <div key={s.step} className="relative text-center group">
                 {/* Step number circle — sits on the connector line */}
-                <div className="relative z-10 w-[104px] h-[104px] mx-auto mb-8">
+                <div className="relative z-10 w-20 h-20 sm:w-[104px] sm:h-[104px] mx-auto mb-6 sm:mb-8">
                   <div className="w-full h-full rounded-full bg-navy-dark ring-2 ring-white/10 flex items-center justify-center group-hover:ring-patriot-red/50 transition-all duration-300">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-patriot-red to-patriot-red-dark flex items-center justify-center shadow-xl shadow-patriot-red/20">
-                      <s.icon className="w-8 h-8 text-white" />
+                    <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-patriot-red to-patriot-red-dark flex items-center justify-center shadow-xl shadow-patriot-red/20">
+                      <s.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                     </div>
                   </div>
                   {/* Step number badge — top-right, properly centered */}

@@ -4,21 +4,21 @@ import { SERVICE_AREAS_DATA } from "@/lib/constants";
 
 export default function ServiceAreas() {
   return (
-    <section className="py-28 bg-white relative overflow-hidden">
+    <section className="py-16 sm:py-28 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Left — Map visual */}
           <div className="relative">
-            <div className="bg-navy rounded-3xl p-10 relative overflow-hidden">
+            <div className="bg-navy rounded-2xl sm:rounded-3xl p-6 sm:p-10 relative overflow-hidden">
               <div className="absolute inset-0 hero-pattern opacity-50" />
               <div className="absolute inset-0 stripe-pattern opacity-10" />
 
-              <div className="relative text-center py-12">
+              <div className="relative text-center py-8 sm:py-12">
                 {/* Shield-shaped pin */}
-                <div className="w-20 h-24 bg-patriot-red shield-shape flex items-center justify-center mx-auto mb-8">
-                  <MapPin className="w-10 h-10 text-white" />
+                <div className="w-16 h-20 sm:w-20 sm:h-24 bg-patriot-red shield-shape flex items-center justify-center mx-auto mb-6 sm:mb-8">
+                  <MapPin className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                 </div>
-                <p className="font-display font-extrabold text-white text-3xl mb-3 tracking-tight">NC Triad Region</p>
+                <p className="font-display font-extrabold text-white text-2xl sm:text-3xl mb-3 tracking-tight">NC Triad Region</p>
                 <p className="text-white/50 text-sm max-w-xs mx-auto">
                   Proudly serving the Piedmont Triad area and surrounding communities
                 </p>

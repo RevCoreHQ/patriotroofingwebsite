@@ -23,7 +23,7 @@ const cardImages = [
 
 export default function ServicesOverview() {
   return (
-    <section className="py-28 bg-warm-gray relative overflow-hidden">
+    <section className="py-16 sm:py-28 bg-warm-gray relative overflow-hidden">
       {/* Subtle star watermark */}
       <div className="absolute -left-20 top-20 text-[300px] leading-none text-navy/[0.02] select-none pointer-events-none hidden lg:block">
         ★
@@ -57,7 +57,7 @@ export default function ServicesOverview() {
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="group relative overflow-hidden rounded-2xl h-72 flex flex-col justify-end transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                className="group relative overflow-hidden rounded-2xl h-60 sm:h-72 flex flex-col justify-end transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
               >
                 {/* Background photo */}
                 <Image
