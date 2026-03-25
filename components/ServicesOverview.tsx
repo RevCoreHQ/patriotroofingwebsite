@@ -1,6 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Home, RefreshCw, Wrench, AlertTriangle, Droplets, Hammer, ArrowRight } from "lucide-react";
-import { SERVICES } from "@/lib/constants";
+import { SERVICES, IMAGES } from "@/lib/constants";
 
 const iconMap = {
   home: Home,
@@ -10,6 +11,15 @@ const iconMap = {
   droplets: Droplets,
   hammer: Hammer,
 } as const;
+
+const cardImages = [
+  IMAGES.gallery1,
+  IMAGES.gallery2,
+  IMAGES.gallery4,
+  IMAGES.gallery6,
+  IMAGES.gallery5,
+  IMAGES.gallery8,
+];
 
 export default function ServicesOverview() {
   return (
@@ -39,57 +49,51 @@ export default function ServicesOverview() {
           </Link>
         </div>
 
-        {/* Service cards — varied layout, not all identical */}
+        {/* Service cards with background photos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICES.map((service, i) => {
             const Icon = iconMap[service.icon];
-            const isHighlighted = i === 0;
             return (
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className={`group relative overflow-hidden p-8 transition-all duration-300 hover:-translate-y-1 ${
-                  isHighlighted
-                    ? "bg-navy text-white row-span-1 md:row-span-1 rounded-2xl"
-                    : "bg-white border border-gray-100 hover:border-patriot-red/20 hover:shadow-xl rounded-2xl"
-                }`}
+                className="group relative overflow-hidden rounded-2xl h-72 flex flex-col justify-end transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
               >
+                {/* Background photo */}
+                <Image
+                  src={cardImages[i]}
+                  alt={service.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+
+                {/* Dark overlay — stronger at bottom for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/70 to-navy-dark/20 group-hover:from-navy-dark group-hover:via-navy-dark/80 group-hover:to-navy-dark/30 transition-all duration-500" />
+
                 {/* Large background number */}
-                <span className={`absolute top-4 right-6 font-display text-7xl font-extrabold leading-none select-none ${
-                  isHighlighted ? "text-white/[0.06]" : "text-navy/[0.04]"
-                }`}>
+                <span className="absolute top-4 right-6 font-display text-7xl font-extrabold leading-none select-none text-white/[0.08]">
                   0{i + 1}
                 </span>
 
                 {/* Left accent bar on hover */}
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-patriot-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top rounded-full" />
 
-                <div className="relative">
-                  <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-5 ${
-                    isHighlighted
-                      ? "bg-patriot-red"
-                      : "bg-navy/[0.06] group-hover:bg-patriot-red transition-colors duration-300"
-                  }`}>
-                    <Icon className={`w-6 h-6 ${
-                      isHighlighted ? "text-white" : "text-navy group-hover:text-white transition-colors duration-300"
-                    }`} />
+                {/* Content */}
+                <div className="relative p-7">
+                  <div className="w-11 h-11 rounded-lg flex items-center justify-center mb-4 bg-patriot-red/90 backdrop-blur-sm">
+                    <Icon className="w-5 h-5 text-white" />
                   </div>
 
-                  <h3 className={`font-display text-xl font-bold mb-3 ${
-                    isHighlighted ? "text-white" : "text-dark"
-                  }`}>
+                  <h3 className="font-display text-xl font-bold text-white mb-2">
                     {service.title}
                   </h3>
 
-                  <p className={`text-sm leading-relaxed mb-6 ${
-                    isHighlighted ? "text-white/60" : "text-muted"
-                  }`}>
+                  <p className="text-white/60 text-sm leading-relaxed mb-4 line-clamp-2">
                     {service.shortDesc}
                   </p>
 
-                  <span className={`inline-flex items-center gap-2 font-semibold text-sm group-hover:gap-3 transition-all ${
-                    isHighlighted ? "text-patriot-red-light" : "text-patriot-red"
-                  }`}>
+                  <span className="inline-flex items-center gap-2 font-semibold text-sm text-patriot-red-light group-hover:gap-3 transition-all">
                     Learn More <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
