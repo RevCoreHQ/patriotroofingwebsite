@@ -167,6 +167,16 @@ body {
   animation: float 4s ease-in-out infinite;
 }
 
+@keyframes loader {
+  0% { width: 0%; }
+  50% { width: 70%; }
+  100% { width: 100%; }
+}
+
+.animate-loader {
+  animation: loader 3s ease-in-out infinite;
+}
+
 /* ─── Card hover glow effect ─── */
 .card-glow {
   position: relative;

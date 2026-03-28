@@ -12,6 +12,17 @@ export const IMAGES = {
   gallery6: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d6012869b2e4b28a91c4.jpg",
   gallery7: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d601bd26d605d643ae68.jpg",
   gallery8: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c3d6017985207da9be2d11.jpg",
+  gallery9: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c79c833204cc47a5483c3a.webp",
+  gallery10: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c79c839fc63a37ff3405e0.webp",
+  gallery11: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c79c839fc63a399a3405df.webp",
+  gallery12: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c79c837115ea09afc6a540.webp",
+  gallery13: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c79c835eea8314ff4dfddb.webp",
+  gallery14: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c79c832e89d851466468ed.webp",
+  gallery15: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c79c831ad9f8390de5aaf1.webp",
+  gallery16: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c79c837115eaa709c6a529.webp",
+  gallery17: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c79c835eea83f60c4dfdcd.webp",
+  gallery18: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c79c835eea83ae534dfddc.webp",
+  gallery19: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c79c833204cc649e483c27.webp",
 };
 
 export const COMPANY = {

@@ -8,10 +8,12 @@ import Testimonials from "@/components/Testimonials";
 import ServiceAreas from "@/components/ServiceAreas";
 import CTASection from "@/components/CTASection";
 import ContactForm from "@/components/ContactForm";
+import PageLoader from "@/components/PageLoader";
 
 export default function HomePage() {
   return (
     <>
+      <PageLoader />
       <Hero />
       <TrustBar />
       <ServicesOverview />

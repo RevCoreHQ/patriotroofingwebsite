@@ -16,7 +16,10 @@ export default function Hero() {
     const video = videoRef.current;
     if (!video) return;
 
-    const onPlaying = () => setVideoReady(true);
+    const onPlaying = () => {
+      setVideoReady(true);
+      window.dispatchEvent(new Event("heroVideoReady"));
+    };
     video.addEventListener("playing", onPlaying);
 
     video.load();
