@@ -23,6 +23,9 @@ export const IMAGES = {
   gallery17: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c79c835eea83f60c4dfdcd.webp",
   gallery18: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c79c835eea83ae534dfddc.webp",
   gallery19: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69c79c833204cc649e483c27.webp",
+  kitchenRenovation: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69cce4a3ddfdcb0abb7369c0.jpg",
+  bathroomRenovation: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69cce4a297f00150db8700dc.jpg",
+  homeRepair: "https://assets.cdn.filesafe.space/UrIbmSbNwH6Sfvb4CBZw/media/69cce4a2c859392b982acd2a.jpg",
 };
 
 export const COMPANY = {

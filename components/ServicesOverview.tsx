@@ -16,9 +16,9 @@ const cardImages = [
   IMAGES.gallery1,
   IMAGES.gallery2,
   IMAGES.gallery4,
-  IMAGES.gallery6,
-  IMAGES.gallery5,
-  IMAGES.gallery8,
+  IMAGES.kitchenRenovation,
+  IMAGES.bathroomRenovation,
+  IMAGES.homeRepair,
 ];
 
 export default function ServicesOverview() {
