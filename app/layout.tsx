@@ -106,6 +106,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
       <head>
+        <link rel="dns-prefetch" href="https://api.leadconnectorhq.com" />
+        <link rel="preconnect" href="https://api.leadconnectorhq.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://link.msgsndr.com" />
+        <link rel="preconnect" href="https://link.msgsndr.com" crossOrigin="anonymous" />
         <link rel="preload" href="/media/hero-poster.webp" as="image" />
         <link
           rel="preload"

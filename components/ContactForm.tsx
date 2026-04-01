@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Phone } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
 
@@ -8,30 +8,9 @@ const FORM_URL =
   "https://api.leadconnectorhq.com/widget/form/TvJdiDu0iZuLMKoolhkD";
 
 export default function ContactForm() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [loaded, setLoaded] = useState(false);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    if (!containerRef.current) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setLoaded(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "200px" }
-    );
-
-    observer.observe(containerRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!loaded) return;
-
-    // Load the GHL embed script once
     const scriptId = "ghl-form-embed";
     if (!document.getElementById(scriptId)) {
       const script = document.createElement("script");
@@ -40,7 +19,7 @@ export default function ContactForm() {
       script.async = true;
       document.body.appendChild(script);
     }
-  }, [loaded]);
+  }, []);
 
   return (
     <section id="contact" className="py-24 bg-warm-gray">
@@ -96,43 +75,48 @@ export default function ContactForm() {
           </div>
 
           {/* Right - GHL form */}
-          <div
-            ref={containerRef}
-            className="bg-white rounded-3xl p-2 shadow-sm border border-gray-100 min-h-[600px]"
-          >
-            {loaded ? (
-              <iframe
-                src={FORM_URL}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  border: "none",
-                  borderRadius: "12px",
-                  minHeight: "573px",
-                }}
-                id="inline-TvJdiDu0iZuLMKoolhkD"
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="Website Form"
-                data-height="573"
-                data-layout-iframe-id="inline-TvJdiDu0iZuLMKoolhkD"
-                data-form-id="TvJdiDu0iZuLMKoolhkD"
-                title="Website Form"
-                loading="lazy"
-              />
-            ) : (
-              <div className="flex items-center justify-center h-full min-h-[573px]">
-                <div className="text-center">
-                  <div className="w-8 h-8 border-2 border-patriot-red border-t-transparent rounded-full animate-spin mx-auto mb-3" />
-                  <p className="text-muted text-sm">Loading form...</p>
+          <div className="bg-white rounded-3xl p-2 shadow-sm border border-gray-100 min-h-[600px] relative">
+            {/* Skeleton placeholder shown until iframe loads */}
+            {!ready && (
+              <div className="absolute inset-2 flex items-center justify-center rounded-xl bg-gray-50">
+                <div className="w-full max-w-sm px-6 space-y-5 animate-pulse">
+                  <div className="h-5 bg-gray-200 rounded w-2/3" />
+                  <div className="space-y-3">
+                    <div className="h-10 bg-gray-200 rounded-lg" />
+                    <div className="h-10 bg-gray-200 rounded-lg" />
+                    <div className="h-10 bg-gray-200 rounded-lg" />
+                    <div className="h-24 bg-gray-200 rounded-lg" />
+                  </div>
+                  <div className="h-11 bg-gray-300 rounded-lg" />
                 </div>
               </div>
             )}
+            <iframe
+              src={FORM_URL}
+              style={{
+                width: "100%",
+                height: "100%",
+                border: "none",
+                borderRadius: "12px",
+                minHeight: "573px",
+                opacity: ready ? 1 : 0,
+                transition: "opacity 0.3s ease",
+              }}
+              id="inline-TvJdiDu0iZuLMKoolhkD"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Website Form"
+              data-height="573"
+              data-layout-iframe-id="inline-TvJdiDu0iZuLMKoolhkD"
+              data-form-id="TvJdiDu0iZuLMKoolhkD"
+              title="Website Form"
+              onLoad={() => setReady(true)}
+            />
           </div>
         </div>
       </div>
