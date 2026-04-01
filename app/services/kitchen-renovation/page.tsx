@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
+import { IMAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Kitchen Renovation in Lexington & Greensboro, NC",
@@ -10,6 +11,7 @@ export default function KitchenRenovationPage() {
   return (
     <ServicePageLayout
       title="Kitchen Renovation"
+      image={IMAGES.kitchenRenovation}
       description="Transform the heart of your home with a custom kitchen renovation. From modern updates to complete remodels, our experienced team delivers beautiful, functional kitchens that your family will love for years to come."
       benefits={[
         "Custom cabinet design and installation — we work with you to create the perfect layout for your kitchen space and lifestyle",

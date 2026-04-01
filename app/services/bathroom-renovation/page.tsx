@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
+import { IMAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Bathroom Renovation in Lexington & Greensboro, NC",
@@ -10,6 +11,7 @@ export default function BathroomRenovationPage() {
   return (
     <ServicePageLayout
       title="Bathroom Renovation"
+      image={IMAGES.bathroomRenovation}
       description="Upgrade your bathroom with modern fixtures, quality tile work, and expert craftsmanship. Whether it's a simple refresh or a complete gut renovation, we create bathrooms that combine style, comfort, and lasting durability."
       benefits={[
         "Custom shower and tub installations — walk-in showers, frameless glass, soaking tubs, and more designed to fit your space perfectly",

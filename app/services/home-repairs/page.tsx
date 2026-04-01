@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
+import { IMAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Home Repairs & Remodeling in Lexington & Greensboro, NC",
@@ -10,6 +11,7 @@ export default function HomeRepairsPage() {
   return (
     <ServicePageLayout
       title="Home Repairs & Remodeling"
+      image={IMAGES.homeRepair}
       description="Beyond roofing, Patriot Roofing & Home Repair offers comprehensive home improvement services. From siding replacement to interior renovations, we bring the same quality craftsmanship to every project."
       benefits={[
         "One trusted contractor for all your home improvement needs — no more juggling multiple companies and conflicting schedules",

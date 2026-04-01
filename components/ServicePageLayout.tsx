@@ -10,6 +10,7 @@ interface ServicePageLayoutProps {
   process: { title: string; desc: string }[];
   features?: string[];
   ctaText?: string;
+  image?: string;
 }
 
 export default function ServicePageLayout({
@@ -19,6 +20,7 @@ export default function ServicePageLayout({
   process,
   features,
   ctaText = "Get Your Free Estimate",
+  image,
 }: ServicePageLayoutProps) {
   return (
     <>
@@ -95,7 +97,7 @@ export default function ServicePageLayout({
             {/* Service photo */}
             <div className="rounded-3xl overflow-hidden relative sticky top-28">
               <Image
-                src={IMAGES.gallery3}
+                src={image || IMAGES.gallery3}
                 alt={`Professional ${title.toLowerCase()} by Patriot Roofing`}
                 width={800}
                 height={600}
