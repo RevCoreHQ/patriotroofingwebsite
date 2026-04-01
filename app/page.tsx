@@ -8,6 +8,7 @@ import Testimonials from "@/components/Testimonials";
 import ServiceAreas from "@/components/ServiceAreas";
 import CTASection from "@/components/CTASection";
 import ContactForm from "@/components/ContactForm";
+import FAQ from "@/components/FAQ";
 
 export default function HomePage() {
   return (
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Process />
       <Gallery />
       <Testimonials />
+      <FAQ />
       <ServiceAreas />
       <CTASection />
       <ContactForm />

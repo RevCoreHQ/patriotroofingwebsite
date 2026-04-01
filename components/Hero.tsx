@@ -58,7 +58,7 @@ export default function Hero() {
         {/* Static poster — always visible, loads instantly */}
         <Image
           src="/media/hero-poster.webp"
-          alt=""
+          alt="Patriot Roofing crew installing a new roof in Lexington NC"
           fill
           className="object-cover"
           priority
